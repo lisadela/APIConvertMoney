@@ -1,0 +1,15 @@
+
+version: "3"
+services:  
+  mongodb-demo-id:
+    image: mongo:latest
+    container_name: mongodb-demo-dockercompose
+    ports:
+      - 27017:27017      
+  spring-demo-id:
+    image: spring-demo-image:1.0
+    container_name: "spring-demo-dockercompose"
+    ports:
+      - 8080:8080
+    links:
+      - mongodb-demo-id
